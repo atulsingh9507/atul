@@ -28,7 +28,7 @@ class Employees(BaseModel):
 class EmployeeInDB(Employees):
     id: int
 
-# Database connection pool
+
 async def get_database_pool():
     return await asyncpg.create_pool(DATABASE_URL)
 
