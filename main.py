@@ -56,7 +56,7 @@ async def create_employees(employees: Employees = Body(...), db_pool: asyncpg.Po
         employee_id = await connection.fetchval(query, *values)
         return {**employees.dict(), "id": employee_id}
 
-# Function to parse date strings to datetime.date objects
+# Function of parse date strings to datetime.date objects
 def parse_date(date_str: str) -> date:
     if date_str:
         return datetime.strptime(date_str, "%Y-%m-%d").date()
